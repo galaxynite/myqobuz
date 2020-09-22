@@ -129,7 +129,7 @@ def get_user_playlists(user, ptype, raw=False):
     offset = 0
     playlists = list()
     while True:
-        pls = user.playlists_get(filter=ptype, limit=limit, offset=offset, raw=raw)
+        pls = user.playlists_get(filter=ptype, limit=limit, offset=offset)
         if raw:
             if len(pls["playlists"]["items"]) == 0:
                 break
@@ -161,7 +161,7 @@ def get_user_favorites(user, fav_type, raw=False):
     offset = 0
     favorites = list()
     while True:
-        favs = user.favorites_get(fav_type=fav_type, limit=limit, offset=offset, raw=raw)
+        favs = user.favorites_get(fav_type=fav_type, limit=limit, offset=offset)
         if raw:
             if len(favs[fav_type]["items"]) == 0:
                 break
